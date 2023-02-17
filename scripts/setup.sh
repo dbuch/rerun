@@ -29,6 +29,13 @@ elif [ -x "$(command -v dnf)" ];   then
         libxkbcommon-devel \
         openssl-devel \
         pkg-config
+elif [ -x "$(command -v pacman)" ];   then
+    sudo pacman -S --needed \
+        clang \
+        libxcb \
+        libxkbcommon \
+        openssl \
+        pkgconf
 fi
 
 # Needed to compile and check the code:

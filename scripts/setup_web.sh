@@ -25,6 +25,7 @@ elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 elif [ -x "$(command -v apk)" ];     then sudo apk add --no-cache $packagesNeeded
 elif [ -x "$(command -v winget)" ];  then sudo winget add --no-cache $packagesNeeded
+elif [ -x "$(command -v pacman)" ];  then sudo pacman -Sy --needed $packagesNeeded
 else
     echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2;
     exit 1
